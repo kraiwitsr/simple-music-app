@@ -19,6 +19,8 @@ interface FunctionProps {
     };
     skipBack(): void;
     skipNext(): void
+    duration: string | null,
+    currentTime: string | null;
 }
 
 const MediaControlCard: React.FC<FunctionProps> = (props) => {
@@ -53,6 +55,9 @@ const MediaControlCard: React.FC<FunctionProps> = (props) => {
                 <IconButton aria-label="next" onClick={props.skipNext}>
                     {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
                 </IconButton>
+                <Typography variant="subtitle1" color="text.secondary" sx={{ marginTop: 0.8, marginLeft: 1.5}}>
+                    {props.currentTime} / {props.duration}
+                </Typography>
             </Box>
         </Card>
     );

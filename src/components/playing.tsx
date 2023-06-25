@@ -1,10 +1,15 @@
-import React from 'react';
+import * as React from 'react';
 import '../static/style.css';
 import MediaControlCard from './MediaControlCard';
 
 interface Props {
     isPlaying: boolean;
+    OnEnded: boolean;
+    duration: string | null;
+    currentTime: string | null;
+    audioElement: React.RefObject<HTMLAudioElement>
     setisPlaying: React.Dispatch<React.SetStateAction<boolean>>
+    setOnEnded: React.Dispatch<React.SetStateAction<boolean>>
     songs: {
         title: string;
         source: string;
@@ -25,6 +30,10 @@ const playing = ({
     isPlaying,
     songs,
     currentSong,
+    OnEnded,
+    setOnEnded,
+    duration,
+    currentTime,
 }: Props) => {
 
     const togglePlay = (): void => {
@@ -44,6 +53,14 @@ const playing = ({
         index === songs.length - 1 ? setCurrentSong(songs[0])
             : setCurrentSong(songs[index + 1]);
     }
+
+    const onEnded = (): void => {
+        if (OnEnded) {
+            skipNext();
+            setOnEnded(false)
+        }
+    }
+    onEnded();
 
     return (
         <div>
@@ -67,7 +84,9 @@ const playing = ({
                 <div className="information pure-g">
                     <div className="pure-u-1 pure-u-md-1-2">
                         <div className="l-box">
-                            <h3 className="information-head">Get started today</h3>
+                            <h3 className="information-head">
+                                Get started today
+                            </h3>
                             <MediaControlCard
                                 {...{
                                     togglePlay,
@@ -75,6 +94,8 @@ const playing = ({
                                     currentSong,
                                     skipBack,
                                     skipNext,
+                                    duration,
+                                    currentTime,
                                 }}
                             />
                         </div>
@@ -84,9 +105,7 @@ const playing = ({
                         <div className="l-box">
                             <h3 className="information-head">Pay monthly or annually</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua. Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, animi sit! Ratione quidem facere repellendus, aliquid atque ullam autem eius ipsa iste iure? Ducimus beatae accusantium at eveniet facilis illo?
                             </p>
                         </div>
                     </div>
@@ -114,7 +133,6 @@ const playing = ({
                     </div>
                 </div>
             </div>
-
             <div className="footer l-box" />
         </div>
     )

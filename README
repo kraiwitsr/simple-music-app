@@ -6,9 +6,10 @@ Simple Music App.
     built with React, it's a free and open-source front-end JavaScript library.
 
     In order to run this app you need to install Node.js, in this project, i use typescript, 
-    you need to install before run this project, type `npm install @types/react @types/react-dom` 
-    you can also be read documentation at https://react.dev/learn/typescript.
+    you need to install before run this project, type: 
+    `npm install @types/react @types/react-dom`.
+    You can also be read documentation at https://react.dev/learn/typescript.
 
-    Install all necessaries package and run this app, type: 
-    `npm install`
-    `npm run dev`
+    Install all dependencies and run this app, type: 
+        `npm install`
+        `npm run dev`

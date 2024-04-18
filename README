@@ -1,7 +1,13 @@
 Simple Music App.
-============
+=================
 
-In order to run this project, use ``yarn`` and
-``yarn run start``.  The the demo at:
+* Introduction
+    Hello, this repository is a music player website.
+    built with React, it's a free and open-source front-end JavaScript library.
 
-    https://codenameapp-d9342.web.app/
+    In order to run this app you need to install Node.js then type
+    
+    `npm install`
+    `npm run dev`
+
+    To install all package and start this app.

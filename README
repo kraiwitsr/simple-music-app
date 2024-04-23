@@ -5,7 +5,7 @@ Simple Music App.
     Hello, this repository is a music player website,
     built with React, it's a free and open-source front-end JavaScript library.
 
-    In order to run this app you need to install Node.js, in this project, i use typescript, 
+    In order to run this app you need to install Node.js, in this project, I use typescript, 
     you need to install before run this project, type: 
     `npm install @types/react @types/react-dom`.
     You can also be read documentation at: https://react.dev/learn/typescript.
